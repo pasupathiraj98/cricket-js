@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Match result</title>
+</head>
+<body> 
+	<div id="boo"></div>
+    <script>
+    
+
+    	    var bat1=	localStorage.getItem('result1');
+   
+          var bat2= localStorage.getItem('result2');
+            bat1=parseInt(bat1);
+            bat2=parseInt(bat2);
+            
+
+            var score1=localStorage.getItem("inscore1");
+             score1=score1.split(",");
+             score1=score1.map(el=> parseInt(el))
+             console.log(score1.indexOf(Math.max(...score1)));
+             console.log(score1);
+             player = score1.indexOf(Math.max(...score1)) + 1
+
+             // console.log("man of the match :player"+player)
+
+             var score2=localStorage.getItem("inscore2");
+             score2=score2.split(",");
+             score2=score2.map(el=> parseInt(el))
+             console.log(score2.indexOf(Math.max(...score2)));
+             console.log(score2);
+             player = score2.indexOf(Math.max(...score2)) + 1
+
+             // console.log("man of the match :player"+player)
+
+
+
+           if(bat1>bat2){
+              document.getElementById("boo").innerText="MELBOURNE STARS WINS," +" MAN  OF THE MATCH :PLAYER"+player;
+
+           }
+           else{
+           	document.getElementById("boo").innerText=" KOLKATA KNIGHT RIDERS WINS," +" MAN  OF THE MATCH :PLAYER"+player;
+           }
+
+          
+
+           if(bat1==bat2){
+           	document.getElementById("boo").innerText="Scores Are Level";
+           	// var xhttp = new XMLHttpRequest();
+
+    // xhttp.onreadystatechange = function(){
+
+    // 	if (this.readyState == 4 && this.status == 200){
+    // 		alert(JSON.parse(this.responseText).mess);
+
+    // 	}
+    // };
+
+   // xhttp.open('POST',"http://localhost:3000/sendata");
+   // xhttp.setRequestHeader("content-Type","application/json;");
+   // xhttp.send(JSON.stringify(data));
+
+           }
+    </script>
+</body>
+</html>
